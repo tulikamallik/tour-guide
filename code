@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://th.bing.com/th/id/OIP.BJhk9ymj6eB-SH3Hn_3rNwHaE2?pid=ImgDet&rs=1');
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* This sets the body's height to 100% of the viewport height */
+            position: relative; /* Make the body a positioning context */
+        }
 
+        /* You can add more styles for content on top of the image here */
+        h1 {
+            font-size: 40px;
+            font-style: italic;
+            font-weight: bold; /* Make the text bold */
+            color: black;
+            text-align: right; /* Align the text to the left */
+            position: absolute;
+            top: 50px; /* Adjust the top position to move it down from the top */
+            left: 10px; /* Adjust the left position to move it from the left */
+        }
+
+        h2{ 
+            font-size: : 5px;
+            font-style: oblique;
+            font-weight: initial;
+            color: black;
+            text-align: left;
+            text-orientation: sideways;
+            position: absolute;
+            top: 80px;
+            left: 50px;
+           }
+
+        /* Styles for the Explore button */
+        #exploreButton {
+            background-color: #007bff; /* Background color */
+            color: white; /* Text color */
+            padding: 10px 20px; /* Padding around the button text */
+            border: none; /* Remove the border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer;
+            font-size: 16px; /* Font size */
+            position: absolute;
+            top: 50%; /* Place the button at the vertical center of the screen */
+            left: 10%; /* Adjust the left position as needed */
+            transform: translate(0, -50%); /* Center the button vertically */
+        }
+
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+    <h1><i>Chennai</i></h1> <!-- "Chennai" text in italics and bold, positioned at the top-left corner -->
+    <h2><p>Chennai formerly known as Madras is the capital city of Tamil Nadu, the southermost Indian state.Chennai is home to many museums, galleries, and other institutions. It is also major centre for music, art and culture in India.With temples, beaches and centres of historical and cultural significance Chennai is one of the most-visited cities in India.The city serves as the gateway to the southern part of India. So hop on to your seats and get ready for the ride that awaits you.<br></p></h2>
+    <button id="fetchData">Fetch Data</button>
+    <button id="exploreButton">Explore</button>
+    <script>
+        document.getElementById("fetchData").addEventListener("click", function () {
+            // Send an HTTP request to your back end
+            fetch("http://your-backend-api-url.com/api/data")
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the data received from the back end
+                    console.log(data);
+                })
+                .catch(error => console.error(error));
+        });
+
+        document.getElementById("exploreButton").addEventListener("click", function () {
+            // Redirect the user to the "dashboardII" page
+            window.location.href = "dashboardII.html";
+        });
+    </script>
+</body>
+</html>
