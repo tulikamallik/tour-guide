@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dropdown Menu Example</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://wallpaperaccess.com/full/2273781.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
+    /* Dropdown button styles */
+    #dropdownButton {
+      background-color: black;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Dropdown content styles */
+    #dropdownContent {
+      display: block;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    #dropdownContent a {
+      color: #fff;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    #dropdownContent a:hover {
+      background-color: blueviolet;
+    }
+
+    #selectedText {
+      color: black;
+      text-align: left;
+      margin-top: 0;
+      font-size: 20px;
+      white-space: pre-line;
+    }
+
+    /* Add a class to style specific text as bold */
+    .bold-text {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Dropdown button -->
+  <button id="dropdownButton">Select an Option</button>
+
+  <!-- Dropdown content -->
+  <div id="dropdownContent">
+    <a href="#" id="Hospitals">Hospitals</a>
+    <a href="#" id="foodStation">Famous Food Station</a>
+    <a href="#" id="tourism">Famous Tourist Stop</a>
+  </div>
+
+  <!-- Display selected text -->
+  <div id="selectedText"></div>
+
+  <script>
+    var dropdownButton = document.getElementById("dropdownButton");
+    var dropdownContent = document.getElementById("dropdownContent");
+    var selectedText = document.getElementById("selectedText");
+
+    // JavaScript to toggle the dropdown menu
+    dropdownButton.addEventListener("click", function() {
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
+
+    // Handle option selection
+    document.getElementById("Hospitals").addEventListener("click", function() {
+      selectedText.innerHTML = "You selected: Hospitals - <br>1) <span class='bold-text'>Apollo Hospital Chennai</span> It is considered to be one of the popular hospitals in India. Apollo hospital was evolved by Dr. Pratap C Reddy in 1983.<br>They work for 24 hours on all days.<br><span class='bold-text'>Apollo Hospital Address:</span><br>No: 21, Greams Lane, Off Greams Road, Chennai- 600006<br>Phone: 044 6060 1066<br>2) <span class='bold-text'> MIOT International Hospital</span><br><span class='bold-text'>MIOT International Hospital Address:</span><br>4/112, Mount Poonamalle High Road, Manapakkam, Mount Poonamalle High Rd, Sathya Nagar, Manapakkam, Chennai- 600089.<br>Phone: 044 4200 2288.<br>3)<span class='bold-text'>Fortis Malar Hospital:</span> Malar Hospital was lately called Fortis Malar Hospital which was founded in the year of 1992.<br><span class='bold-text'>Fortis Malar Hospital Address:</span><br>No.52, 1st Main Road, Gandhi Nagar, Adyar, Chennai- 600020<br>Phone: 044 4289 2222";
+      dropdownContent.style.display = "none";
+    });
+
+    document.getElementById("foodStation").addEventListener("click", function() {
+      selectedText.innerHTML = "You selected famous food station<br>1) <span class='bold-text'>Anna Nagar:</span> Anna Nagar is one of the most well-known street food places in Chennai.<br>Must-try Dishes: Jigarthanda is one of the most popular beverages that you can enjoy at this food street.<br>How to Reach Here: The nearest metro station to this market is Nandanam Metro Station. It is about a km away from the destination.<br>2) <span class='bold-text'>Srinivasa Road, T. Nagar:</span> Must-try Dishes: Dosa and Idiyappam, the steamed rice noodles are two of the most famous items that you should must-try while here.<br>How to Reach Here: The nearest metro station to this market is Nandanam Metro Station. It is about a km away from the destination.<br>3) <span class='bold-text'>Marina Beach:</span> Must-try Dishes: A visit to this pleasing beach is incomplete without having a plate of freshly fried crispy Bhajis.<br>Multiple types of Bhajis such as chili bhaji, onion bhaji, potato bhaji are served by multiple stalls here.<br>How to Reach Here: A bus is the most convenient way to reach this place. The closest bus stop to the beach is the Marina Beach bus stop. The beach is 3-4 min walking distance away from the stop.";
+      dropdownContent.style.display = "none";
+    });
+
+    document.getElementById("tourism").addEventListener("click", function() {
+      selectedText.innerHTML = "You selected: Famous Tourist Stop -<br> 1) <span class='bold-text'>Covelong Beach:</span> Walk Through The Sparkling Silver Sand.<br> Location: Covelong, Chennai, Tamil Nadu.<br> Timings: All day long. Entry fee: Free<br> 2) <span class='bold-text'>Thiruvanmiyur Beach:</span> For Beautiful Sunrise And Sunset<br> Location: Chennai, Tamil Nadu.<br> Timings: All day long.<br> Entry fee: Free<br> 3)<span class='bold-text'>Fort St. George: Witness British Artistry</span> Location: Chennai, Tamil Nadu.<br>Timings: 9 AM to 5 PM.<br>Entry fee: INR 5 for Indians and INR 100 for foreigners";
+      dropdownContent.style.display = "none";
+    });
+
+    // Close the dropdown menu if the user clicks outside of it
+    document.addEventListener("click", function(event) {
+      if (event.target != dropdownContent && event.target != dropdownButton) {
+        dropdownContent.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
